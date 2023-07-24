@@ -12,3 +12,8 @@ export const darkTheme = {
     textColor: lightTheme.backgroundColor,
     backgroundColor: lightTheme.secondaryColor,
 };
+
+export const screenSize = {
+    small: "512px",
+    medium: "1024px"
+}
