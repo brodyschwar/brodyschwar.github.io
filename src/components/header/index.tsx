@@ -11,7 +11,6 @@ const Wrapper = styled.div`
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    margin: 0 0 0.5rem 0;
     border-bottom: 0.1rem solid ${ lightTheme.tertiaryColor };
     box-shadow: 0 0.2rem 0.5rem ${ hexToRgba(lightTheme.secondaryColor, 0.8) };
 `
