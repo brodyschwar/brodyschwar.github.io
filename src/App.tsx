@@ -7,6 +7,7 @@ import { CAR_POOL_PROJECT } from './data/projects';
 import TitleSection from './components/titleSection';
 import { MAIN_TITLE } from './data/titleSections';
 import AboutMe from './components/aboutSection';
+import ExperienceCard from './components/experienceCard';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
     <div className="App">
       <TitleSection {...MAIN_TITLE}/>
       <AboutMe/>
+      <ExperienceCard/>
       <SquareButton primary>Test Primary</SquareButton>
       <SquareButton secondary>Test Seconday</SquareButton>
       <SquareButton tertiary>Test Tertiary</SquareButton>
