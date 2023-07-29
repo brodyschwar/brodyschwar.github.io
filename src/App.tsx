@@ -6,13 +6,14 @@ import ProjectCard from './components/projectCard';
 import { CAR_POOL_PROJECT } from './data/projects';
 import TitleSection from './components/titleSection';
 import { MAIN_TITLE } from './data/titleSections';
+import AboutMe from './components/aboutSection';
 
 function App() {
   return (
     <>
-    <Header/>
     <div className="App">
       <TitleSection {...MAIN_TITLE}/>
+      <AboutMe/>
       <SquareButton primary>Test Primary</SquareButton>
       <SquareButton secondary>Test Seconday</SquareButton>
       <SquareButton tertiary>Test Tertiary</SquareButton>

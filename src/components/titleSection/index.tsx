@@ -17,7 +17,7 @@ export interface ButtonProps {
 const Backdrop = styled.div`
     width: 100%
     margin: 0;
-    padding: 3rem 0.5rem;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,7 +70,7 @@ const Title = styled.h1`
 `
 
 const ImageCard = styled.div`
-    height: 40rem;
+    height: 80vh;
     width: 30rem;
     border: 0.5rem solid ${ lightTheme.secondaryColor };
     background-size: cover;
