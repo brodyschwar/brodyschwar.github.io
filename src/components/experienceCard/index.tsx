@@ -15,10 +15,6 @@ const Wrapper = styled.div`
   display: grid;
   width: 100%;
   grid-template-columns: 1fr 2rem 3fr;
-  align-items: flex-start;
-  @media (max-width: ${screenSize.medium}) {
-    flex-direction: column;
-  }
 `;
 
 const IconWrapper = styled.div`
@@ -44,6 +40,7 @@ const IconWrapper = styled.div`
 const ContentWrapper = styled.div`
   display: flex;
   margin: 0 1rem 1rem 0;
+  padding-top: 1rem;
   border-bottom: 0.2rem solid ${lightTheme.primaryColor};
   max-width: 50rem;
   justify-content: flex-end;
@@ -97,7 +94,6 @@ const Description = styled.p`
     }
 `
 
-
 const Icon = styled.span`
     width: 2rem;
     height: 2rem;
@@ -123,17 +119,6 @@ const SkillsBox = styled.div`
     }
 `
 
-const SkillTitle = styled.h6`
-    font-family: ${ lightTheme.primaryFont };
-    color: ${ lightTheme.textColor };
-    font-weight: 800;
-    font-size: 22px;
-    margin: 0.2rem 0.5rem 0 0.2rem;
-    width: 100%;
-    text-align: right;
-    margin-left: 0.5rem;
-`
-
 const Skill = styled.p`
     font-family: ${ lightTheme.primaryFont };
     color: ${ lightTheme.textColor };
@@ -146,6 +131,7 @@ const LabelBox = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    padding-top: 1rem;
 `
 
 const ExperienceCard: React.FC<ExperienceCardProps> = ({
@@ -172,7 +158,6 @@ return (
             <Description>{description}</Description>
         </DescriptionBox>
         <SkillsBox>
-            <SkillTitle>SKILLS USED</SkillTitle>
             {skills.map((skill) => (
             <Skill key={skill} children={skill} />
             ))}
