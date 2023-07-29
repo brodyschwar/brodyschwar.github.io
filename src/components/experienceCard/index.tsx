@@ -2,35 +2,60 @@ import React from 'react';
 import { styled } from 'styled-components';
 import { lightTheme, screenSize } from '../../themes/themes';
 
-const Wrapper = styled.div`
-    width: 100%;
-    background: transparent;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    margin: 1rem;
+export interface ExperienceCardProps {
+    position: string,
+    company: string,
+    dates: string,
+    location: string,
+    description: string,
+    skills: string[],
+}
 
-    @media (max-width: ${ screenSize.medium }) {
-        flex-direction: column;
-    }
-`
+const Wrapper = styled.div`
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 2rem 3fr;
+  align-items: flex-start;
+  @media (max-width: ${screenSize.medium}) {
+    flex-direction: column;
+  }
+`;
+
+const IconWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100%;
+
+  position: relative; /* Set to relative for positioning pseudo-element */
+  z-index: 1;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0.9rem; /* Adjust the left position to center the line */
+    width: 0.2rem;
+    background-color: ${lightTheme.tertiaryColor}; /* Set the color of the line */
+    z-index: -1;
+  }
+`;
 
 const ContentWrapper = styled.div`
-    display: flex;
-    margin: 0 1rem 1.5rem 0;
-    border-bottom: 0.2rem solid ${ lightTheme.primaryColor };
-    max-width: 50rem;
-    justify-content: flex-end;
-    align-items: flex-end;
+  display: flex;
+  margin: 0 1rem 1rem 0;
+  border-bottom: 0.2rem solid ${lightTheme.primaryColor};
+  max-width: 50rem;
+  justify-content: flex-end;
+  align-items: flex-end;
 
-    @media (max-width: ${ screenSize.medium }) {
-        flex-direction: column;
-    }
-    `
+  @media (max-width: ${screenSize.medium}) {
+    flex-direction: column;
+  }
+`;
 
 const DescriptionBox = styled.div`
     display: flex;
-    padding: 1rem;
     flex-direction: column;
     height: 100%;
     max-width: 30rem;
@@ -43,6 +68,10 @@ const Heading = styled.h5`
     font-weight: 800;
     font-size: 32px;
     margin: 0;
+
+    @media (max-width: ${ screenSize.medium }) {
+        font-size: 24px;
+    }
 `
 
 const SubHeading = styled.p`
@@ -51,6 +80,10 @@ const SubHeading = styled.p`
     font-weight: 400;
     font-size: 22px;
     margin: 0;
+
+    @media (max-width: ${ screenSize.medium }) {
+        font-size: 18px;
+    }
 `
 
 const Description = styled.p`
@@ -58,14 +91,19 @@ const Description = styled.p`
     font-family: ${ lightTheme.primaryFont };
     font-weight: 400;
     font-size: 20px;
+
+    @media (max-width: ${ screenSize.medium }) {
+        font-size: 16px;
+    }
 `
 
 
 const Icon = styled.span`
-    width: 3rem;
-    height: 3rem;
+    width: 2rem;
+    height: 2rem;
     border-radius: 4rem;
     border: none;
+    min-width: 2rem;
     background-color: ${ lightTheme.primaryColor };
 `
 
@@ -105,69 +143,44 @@ const Skill = styled.p`
 `
 
 const LabelBox = styled.div`
-    padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    margin: 0;
-
-    @media (max-width: ${ screenSize.medium }) {
-        align-items: flex-start;
-        margin-right: 4rem;
-    }
 `
 
-
-
-const ExperienceCard = () => {
-    return(
-        <Wrapper>
-            <span style={{display: "flex", width: "fit-content", alignItems: "flex-end"}}>
-            <Icon style={{background: "none"}}/>
-            <LabelBox>
-                <Heading style={{textAlign: "right"}}>
-                    React Intern
-                </Heading>
-                <SubHeading style={{textAlign: "right"}}>
-                    Jun - Aug 2022
-                </SubHeading>
-            </LabelBox>
-            </span>
-            <span style={{display: "flex", width: "fit-content", alignItems: "flex-end"}}>
-            <Icon/>
-            <ContentWrapper>
-                <DescriptionBox>
-                    <Heading>
-                        Sample Experience
-                    </Heading>
-                    <SubHeading>
-                        Chicago
-                    </SubHeading>
-                    <Description>
-                        I worked really hard for several years. Did Amazing things too. Wow crazy.
-                    </Description>
-                </DescriptionBox>
-                <SkillsBox>
-                    <SkillTitle>
-                        Skills Used
-                    </SkillTitle>
-                    <Skill>
-                        Python
-                    </Skill>
-                    <Skill>
-                        Python
-                    </Skill>
-                    <Skill>
-                        Python
-                    </Skill>
-                    <Skill>
-                        Python
-                    </Skill>
-                </SkillsBox>
-            </ContentWrapper>
-            </span>
-        </Wrapper>
-    );
-}
+const ExperienceCard: React.FC<ExperienceCardProps> = ({
+    position,
+    company,
+    dates,
+    location,
+    description,
+    skills,
+}) => {
+return (
+    <Wrapper>
+        <LabelBox>
+        <Heading style={{ textAlign: 'right' }}>{position}</Heading>
+        <SubHeading style={{ textAlign: 'right' }}>{dates}</SubHeading>
+        </LabelBox>
+        <IconWrapper>
+        <Icon />
+        </IconWrapper>
+        <ContentWrapper>
+        <DescriptionBox>
+            <Heading>{company}</Heading>
+            <SubHeading>{location}</SubHeading>
+            <Description>{description}</Description>
+        </DescriptionBox>
+        <SkillsBox>
+            <SkillTitle>SKILLS USED</SkillTitle>
+            {skills.map((skill) => (
+            <Skill key={skill} children={skill} />
+            ))}
+        </SkillsBox>
+        </ContentWrapper>
+    </Wrapper>
+);
+};
+  
 
 export default ExperienceCard;

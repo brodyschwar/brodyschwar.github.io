@@ -27,6 +27,7 @@ const Stat = styled.p`
     font-size: 16px;
     padding: 0;
     margin: 0;
+    text-align: right;
 `
 
 const StatsListing: React.FC<StatsListingProps> = ({feild, stat}) => {
