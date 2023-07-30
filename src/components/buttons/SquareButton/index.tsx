@@ -8,7 +8,8 @@ export interface ButtonProps {
     children: ReactNode
     primary?: boolean,
     secondary?: boolean,
-    tertiary?: boolean
+    tertiary?: boolean,
+    onClick?: () => void
 }
 
 enum ButtonTypes {
@@ -86,12 +87,12 @@ const Icon = styled.span`
     margin: 0.2rem;
 `
 
-const SquareButton: React.FC<ButtonProps> = ({icon, primary, secondary, tertiary, children}) => {
+const SquareButton: React.FC<ButtonProps> = ({icon, primary, secondary, tertiary, onClick, children}) => {
 
     const type: ButtonTypes = tertiary ? ButtonTypes.TERTIARY : (secondary ? ButtonTypes.SECONDARY : ButtonTypes.PRIMARY);
 
     return (
-    <StyledButton type={type}>
+    <StyledButton type={type} onClick={onClick}>
         {children}
         { icon && <Icon>{icon}</Icon>}
     </StyledButton>

@@ -3,15 +3,14 @@ import { styled } from 'styled-components';
 import { lightTheme, screenSize } from '../../themes/themes';
 import ProjectImage from './projectImage';
 import SquareButton from '../buttons/SquareButton';
-import { ImageProps } from '../../data/types';
+import { ButtonProps, ImageProps } from '../../data/types';
 
 export interface ProjectCardProps {
     reverse?: boolean,
     projectTitle: string,
     skills: string[],
     description: string,
-    buttonLabel: string,
-    buttonAction?: any,
+    buttonProps?: ButtonProps,
     img: ImageProps
 }
 
@@ -82,7 +81,7 @@ const Spacer = styled.span`
 
 const demoSkills: string[] = ["python", "c#", "google-sheets"]
 
-const ProjectCard: React.FC<ProjectCardProps> = ({reverse, projectTitle, skills, description, buttonLabel, img, buttonAction}) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({reverse, projectTitle, skills, description, img, buttonProps}) => {
     const isReverse: boolean = !!reverse;
     return (
         <Wrapper $isreverse={isReverse}>
@@ -101,8 +100,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({reverse, projectTitle, skills,
                 <Description>
                     {description}
                 </Description>
-                { !!buttonAction && <SquareButton tertiary>
-                    {buttonLabel}
+                { !!buttonProps && <SquareButton onClick={buttonProps.clickHandler} tertiary>
+                    {buttonProps.label}
                 </SquareButton>}
             </InfoSection>
             { isReverse && <ProjectImage {...img}/>}
