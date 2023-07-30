@@ -11,6 +11,7 @@ export interface ProjectCardProps {
     skills: string[],
     description: string,
     buttonLabel: string,
+    buttonAction?: any,
     img: ImageProps
 }
 
@@ -18,24 +19,29 @@ const Wrapper = styled.div<{ $isreverse: boolean }>`
     display: flex;
     justify-content: center;
     width: 100%;
-    padding: 0.5rem;
+    padding: 2rem 0;
 
     @media (max-width: ${ screenSize.medium }) {
         flex-direction: ${ props => props.$isreverse ? 'column-reverse' : 'column'};
         align-items: center;
+        margin-bottom: 3rem;
     }
 `
 
 const CardTitle = styled.h4`
     font-family: ${ lightTheme.primaryFont };
     font-weight: 800;
-    font-size: 36px;
     color: ${ lightTheme.textColor };
+    font-size: 36px;
     margin: 0;
     text-align: right;
 
-    @media (max-width: ${ screenSize.small }) {
+    @media (max-width: ${ screenSize.medium }) {
         font-size: 30px;
+    }
+
+    @media (max-width: ${ screenSize.small }) {
+        font-size: 24px;
     }
 `
 
@@ -71,12 +77,12 @@ const Spacer = styled.span`
     height: 0.2rem;
     width: 70%;
     background-color: ${ lightTheme.tertiaryColor };
-    margin: 0.5rem 0 2rem 0;
+    margin: 0.5rem 0 1rem 0;
 `
 
 const demoSkills: string[] = ["python", "c#", "google-sheets"]
 
-const ProjectCard: React.FC<ProjectCardProps> = ({reverse, projectTitle, skills, description, buttonLabel, img}) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({reverse, projectTitle, skills, description, buttonLabel, img, buttonAction}) => {
     const isReverse: boolean = !!reverse;
     return (
         <Wrapper $isreverse={isReverse}>
@@ -95,9 +101,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({reverse, projectTitle, skills,
                 <Description>
                     {description}
                 </Description>
-                <SquareButton primary>
+                { !!buttonAction && <SquareButton tertiary>
                     {buttonLabel}
-                </SquareButton>
+                </SquareButton>}
             </InfoSection>
             { isReverse && <ProjectImage {...img}/>}
         </Wrapper>

@@ -49,6 +49,7 @@ const Icon = styled.span`
 
 const Header = styled.h2`
     font-family: ${ lightTheme.primaryFont };
+    color: ${ lightTheme.textColor };
     font-size: 36px;
     font-weight: 800;
 
