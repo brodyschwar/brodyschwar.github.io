@@ -27,7 +27,7 @@ const Backdrop = styled.div`
 const Wrapper = styled.div`
     display: flex;
     align-items: flex-end;
-    justify-content: space-between;
+    justify-content: space-around;
 
     @media (max-width: ${ screenSize.medium }) {
         flex-direction: column;
@@ -72,9 +72,10 @@ const Title = styled.h1`
 const ImageCard = styled.div`
     height: 80vh;
     width: 30rem;
-    border: 0.5rem solid ${ lightTheme.secondaryColor };
+    border: 0.2rem solid ${ lightTheme.tertiaryColor };
     background-size: cover;
     background-position: center;
+    margin-right: 1rem;
 
     @media (max-width: ${ screenSize.medium }) {
         height: 20rem;
@@ -89,6 +90,7 @@ const InfoSection = styled.div`
     align-items: flex-end;
     justify-content: flex-end;
     padding-top: 2rem;
+    margin-right: 1rem;
 
     @media (max-width: ${ screenSize.medium }) {
         flex-direction: column-reverse;
