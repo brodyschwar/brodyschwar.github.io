@@ -2,16 +2,12 @@ import React from 'react';
 import { styled } from 'styled-components';
 import { lightTheme, screenSize } from '../../themes/themes';
 import RoundButton from '../buttons/RoundButton';
-import { ImageProps } from '../../data/types';
+import { ButtonProps, ImageProps } from '../../data/types';
 
 export interface TitleSectionProps {
-    title: String,
+    title: string,
     buttons: ButtonProps[],
     img: ImageProps
-}
-
-export interface ButtonProps {
-    label: String;
 }
 
 const Backdrop = styled.div`
@@ -106,7 +102,7 @@ const TitleSection: React.FC<TitleSectionProps> = ({title, buttons, img}) => {
                 <InfoSection>
                     <ButtonWrapper>
                         {buttons.map((button) => (
-                            <RoundButton>{button.label}</RoundButton>
+                            <RoundButton onClick={button.clickHandler}>{button.label}</RoundButton>
                         ))}
                     </ButtonWrapper>
                     <DecorativeSpacer/>

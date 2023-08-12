@@ -52,27 +52,30 @@ const Description = styled.div`
     color: ${ lightTheme.textColor };
 `
 
-const sampleStatsData: StatsListingProps[] = [
+const STATS: StatsListingProps[] = [
     {feild: "Name", stat: "Brody Schwartz"},
-    {feild: "Age", stat: "21"},
     {feild: "Pronouns", stat: "He/Him"},
+    {feild: "University", stat: "University of Michigan"},
     {feild: "Degree", stat: "B.S. Computer Science"},
     {feild: "Minors", stat: "Mathematics, Philosophy"}
 ];
+
+const ABOUT_DESCRIPTION = "Hi! I am graduating in Spring 2024 from the University of Michigan with a B.S. in Computer Science. While in college, I have completed many acedemic and side projects that I'd love to showcase. Please get to know me through work I have done!";
+
 const AboutMe = () => {
     return(
         <Wrapper>
             <TitleBar title={"About Me"}/>
             <InfoWrapper>
                 <Description>
-                    Hi! I am a soon to be graduate of the University of Michigan, majoring in Computer Science and minoring in Mathematics and Philosophy.
+                    { ABOUT_DESCRIPTION }
                 </Description>
                 <StatsFeild>
                     <StatsTitle> 
                         STATS 
                     </StatsTitle>
-                    {sampleStatsData.map((stats) => (
-                        <StatsListing {...stats}/>
+                    {STATS.map((stat) => (
+                        <StatsListing {...stat}/>
                     ))}
                     <HorizontalLine/>
                 </StatsFeild>

@@ -105,8 +105,8 @@ const Icon = styled.span`
 
 const SkillsBox = styled.div`
     background-color: ${ lightTheme.primaryColor };
-    width: 50%;
-    max-width: 10rem;
+    width: fit-content;
+    padding-left: 3rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -114,6 +114,7 @@ const SkillsBox = styled.div`
 
     @media (max-width: ${ screenSize.medium }) {
         max-width: 95%;
+        padding-left: 2rem;
         width: fit-content;
         flex-flow: row wrap;
     }
@@ -125,6 +126,7 @@ const Skill = styled.p`
     font-weight: 400;
     font-size: 18px;
     margin: 0.2rem 0.5rem;
+    text-align: right;
 `
 
 const LabelBox = styled.div`
