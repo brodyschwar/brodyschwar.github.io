@@ -10,7 +10,7 @@ const RoundButton = styled.button`
     border: 0.2rem solid transparent;
 
     font-family: ${lightTheme.primaryFont };
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 400;
 
     &:hover {

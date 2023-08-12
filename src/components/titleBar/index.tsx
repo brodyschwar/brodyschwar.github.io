@@ -16,6 +16,7 @@ const HeaderLine = styled.span`
 `
 const Header = styled.h2`
     min-width: fit-content;
+    margin: 0.5rem 0;
     padding: 0 2rem;
     font-family: ${ lightTheme.primaryFont };
     font-size: 36px;

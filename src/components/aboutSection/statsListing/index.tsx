@@ -1,6 +1,6 @@
 import React from 'react';
 import { styled } from 'styled-components';
-import { lightTheme, screenSize } from '../../../themes/themes';
+import { lightTheme } from '../../../themes/themes';
 import HorizontalLine from '../../horizontalLine';
 
 export interface StatsListingProps {

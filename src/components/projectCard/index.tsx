@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { styled } from 'styled-components';
 import { lightTheme, screenSize } from '../../themes/themes';
 import ProjectImage from './projectImage';
 import SquareButton from '../buttons/SquareButton';
 import { ButtonProps, ImageProps } from '../../data/types';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export interface ProjectCardProps {
     reverse?: boolean,
@@ -17,8 +19,9 @@ export interface ProjectCardProps {
 const Wrapper = styled.div<{ $isreverse: boolean }>`
     display: flex;
     justify-content: center;
+    flex-direction: row;
     width: 100%;
-    padding: 2rem 0;
+    padding: 1rem 0;
 
     @media (max-width: ${ screenSize.medium }) {
         flex-direction: ${ props => props.$isreverse ? 'column-reverse' : 'column'};
@@ -83,8 +86,11 @@ const demoSkills: string[] = ["python", "c#", "google-sheets"]
 
 const ProjectCard: React.FC<ProjectCardProps> = ({reverse, projectTitle, skills, description, img, buttonProps}) => {
     const isReverse: boolean = !!reverse;
+    useEffect(() => {
+        AOS.init({ duration: 1000 });
+    }, []);
     return (
-        <Wrapper $isreverse={isReverse}>
+        <Wrapper data-aos="fade-up" $isreverse={isReverse}>
             { !isReverse && <ProjectImage {...img}/>}
             <InfoSection>
                 <CardTitle>
@@ -109,4 +115,4 @@ const ProjectCard: React.FC<ProjectCardProps> = ({reverse, projectTitle, skills,
     );
 }
 
-export default ProjectCard;
+export default ProjectCard

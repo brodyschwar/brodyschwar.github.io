@@ -1,6 +1,6 @@
 import React from 'react';
 import { styled } from 'styled-components';
-import { lightTheme, screenSize } from '../../themes/themes';
+import { lightTheme } from '../../themes/themes';
 import StatsListing, { StatsListingProps } from './statsListing';
 import HorizontalLine from '../horizontalLine';
 import TitleBar from '../titleBar';
@@ -74,8 +74,8 @@ const AboutMe = () => {
                     <StatsTitle> 
                         STATS 
                     </StatsTitle>
-                    {STATS.map((stat) => (
-                        <StatsListing {...stat}/>
+                    {STATS.map((stat, index) => (
+                        <StatsListing key={index} {...stat}/>
                     ))}
                     <HorizontalLine/>
                 </StatsFeild>
