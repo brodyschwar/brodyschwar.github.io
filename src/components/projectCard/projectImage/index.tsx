@@ -8,7 +8,6 @@ const StyledImage = styled.div`
     width: 100%;
     height: 20rem;
     max-width: 30rem;
-    margin: 0.5rem;
     background-size: cover;
     background-position: center;
     border: 0.2rem solid ${ lightTheme.tertiaryColor };

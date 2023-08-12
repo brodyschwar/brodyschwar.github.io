@@ -44,7 +44,7 @@ const DecorativeSpacer = styled.span`
     width: 70%;
     height: 0.2rem;
     background-color: ${ lightTheme.tertiaryColor };
-    margin: 2rem 0;
+    margin: 1rem 0;
 `
 const Title = styled.h1`
     margin: 0;
@@ -67,16 +67,11 @@ const Title = styled.h1`
 
 const ImageCard = styled.div`
     height: 80vh;
-    width: 30rem;
+    min-width: 20rem;
     border: 0.2rem solid ${ lightTheme.tertiaryColor };
     background-size: cover;
     background-position: center;
     margin-right: 1rem;
-
-    @media (max-width: ${ screenSize.medium }) {
-        height: 20rem;
-        width: 15rem;
-    }
 `
 
 const InfoSection = styled.div`
@@ -101,8 +96,8 @@ const TitleSection: React.FC<TitleSectionProps> = ({title, buttons, img}) => {
                 <ImageCard style={{backgroundImage: `url("${img.img}")`}}/>
                 <InfoSection>
                     <ButtonWrapper>
-                        {buttons.map((button) => (
-                            <RoundButton onClick={button.clickHandler}>{button.label}</RoundButton>
+                        {buttons.map((button, index) => (
+                            <RoundButton key={index} onClick={button.clickHandler}>{button.label}</RoundButton>
                         ))}
                     </ButtonWrapper>
                     <DecorativeSpacer/>

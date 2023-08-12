@@ -1,4 +1,4 @@
-import { ExperienceCardProps } from "../components/experienceCard";
+import { ExperienceCardProps } from "../components/experienceAndLeadershipSection/experienceCard";
 
 const BOUNTEOUS: ExperienceCardProps = {
     position: "React Intern",
@@ -20,7 +20,7 @@ const CAXY: ExperienceCardProps = {
 
 const CO_CAPTAIN: ExperienceCardProps = {
     position: "Co-Captain",
-    dates: "Jun - Aug 2023",
+    dates: "Jun - Present",
     company: "The University of Michigan Sailing Team",
     location: "Ann Arbor",
     description: "Head a board of seven alongside a co-captain to organize and lead the Michigan Sailing Team. Connect with coaches, team members and alumni to fulfill the team’s mission to represent the University of Michigan across a wide range of competitive sailing events.",

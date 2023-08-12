@@ -2,7 +2,7 @@ import React from 'react';
 import { styled } from 'styled-components';
 import { lightTheme, screenSize } from '../../themes/themes';
 import { EXPERIENCE } from '../../data/experience';
-import ExperienceCard from '../experienceCard';
+import ExperienceCard from './experienceCard';
 
 const Wrapper = styled.div`
   background-color: ${lightTheme.backgroundColor};
@@ -13,7 +13,7 @@ const Wrapper = styled.div`
 const DescriptionWrapper = styled.div`
     display: grid;
     width: 100%;
-    grid-template-columns: 1fr 2rem 3fr;
+    grid-template-columns: minmax(4rem, 4fr) 2rem 10fr;
 `
 
 const IconWrapper = styled.div`
@@ -68,12 +68,11 @@ const Description = styled.div`
     font-family: ${ lightTheme.primaryFont };
     font-weight: 400;
     font-size: 20px;
-    min-width: 20rem;
-    max-width: 50rem;
+    max-width: 40rem;
     color: ${ lightTheme.textColor };
 `
 
-const description: string = "Check out my experience"
+const description: string = "I have always pursued experience and leadership within all my endeavors. I am constantly looking to grow and develop, in order to maximize what I can do. Check out how I got the skills I have today."
 
 const ExperienceAndLeadershipSection = () => {
     return(
@@ -92,8 +91,8 @@ const ExperienceAndLeadershipSection = () => {
                 </Description>
                 </div>
             </DescriptionWrapper>
-            {EXPERIENCE.map((experience) => (
-                <ExperienceCard key={experience.company} {...experience}/>
+            {EXPERIENCE.map((experience, indx) => (
+                <ExperienceCard key={indx} {...experience}/>
             ))}
         </Wrapper>
     );

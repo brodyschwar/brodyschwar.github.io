@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { styled } from 'styled-components';
-import { lightTheme, screenSize } from '../../themes/themes';
+import { lightTheme, screenSize } from '../../../themes/themes';
+import AOS from "aos";
+import "aos/dist/aos.css";
+import Aos from 'aos';
 
 export interface ExperienceCardProps {
     position: string,
@@ -14,27 +17,7 @@ export interface ExperienceCardProps {
 const Wrapper = styled.div`
   display: grid;
   width: 100%;
-  grid-template-columns: 1fr 2rem 3fr;
-`;
-
-const IconWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  height: 100%;
-
-  position: relative; /* Set to relative for positioning pseudo-element */
-  z-index: 1;
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0.9rem; /* Adjust the left position to center the line */
-    width: 0.2rem;
-    background-color: ${lightTheme.tertiaryColor}; /* Set the color of the line */
-    z-index: -1;
-  }
+  grid-template-columns: minmax(4rem, 4fr) 2rem 10fr;
 `;
 
 const ContentWrapper = styled.div`
@@ -95,6 +78,9 @@ const Description = styled.p`
 `
 
 const Icon = styled.span`
+    position: relative;
+    left: -2rem;
+    bottom: -1.1rem;
     width: 2rem;
     height: 2rem;
     border-radius: 4rem;
@@ -113,10 +99,10 @@ const SkillsBox = styled.div`
     align-items: flex-end;
 
     @media (max-width: ${ screenSize.medium }) {
-        max-width: 95%;
-        padding-left: 2rem;
+        max-width: calc(100% - 1rem);
         width: fit-content;
         flex-flow: row wrap;
+        padding-left: 0;
     }
 `
 
@@ -128,13 +114,31 @@ const Skill = styled.p`
     margin: 0.2rem 0.5rem;
     text-align: right;
 `
-
 const LabelBox = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     padding-top: 1rem;
 `
+
+const IconWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+  margin-top: 0.2rem;
+
+  position: relative; /* Set to relative for positioning pseudo-element */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0.9rem; /* Adjust the left position to center the line */
+    width: 0.2rem;
+    background-color: ${lightTheme.tertiaryColor}; /* Set the color of the line */
+  }
+`;
 
 const ExperienceCard: React.FC<ExperienceCardProps> = ({
     position,
@@ -144,29 +148,31 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
     description,
     skills,
 }) => {
-return (
-    <Wrapper>
-        <LabelBox>
-        <Heading style={{ textAlign: 'right' }}>{position}</Heading>
-        <SubHeading style={{ textAlign: 'right' }}>{dates}</SubHeading>
-        </LabelBox>
-        <IconWrapper>
-        <Icon />
-        </IconWrapper>
-        <ContentWrapper>
-        <DescriptionBox>
-            <Heading>{company}</Heading>
-            <SubHeading>{location}</SubHeading>
-            <Description>{description}</Description>
-        </DescriptionBox>
-        <SkillsBox>
-            {skills.map((skill) => (
-            <Skill key={skill} children={skill} />
-            ))}
-        </SkillsBox>
-        </ContentWrapper>
-    </Wrapper>
-);
+    useEffect(() => {
+        AOS.init({ duration: 1000 });
+    }, []);
+    return (
+        <Wrapper>
+            <LabelBox data-aos="fade-up">
+                <Heading style={{ textAlign: 'right' }}>{position}</Heading>
+                <SubHeading style={{ textAlign: 'right' }}>{dates}</SubHeading>
+            </LabelBox>
+            <IconWrapper/>
+            <ContentWrapper data-aos="fade-up">
+                <Icon />
+                <DescriptionBox>
+                    <Heading>{company}</Heading>
+                    <SubHeading>{location}</SubHeading>
+                    <Description>{description}</Description>
+                </DescriptionBox>
+                <SkillsBox>
+                    {skills.map((skill) => (
+                    <Skill key={skill} children={skill} />
+                    ))}
+                </SkillsBox>
+            </ContentWrapper>
+        </Wrapper>
+    );
 };
   
 
