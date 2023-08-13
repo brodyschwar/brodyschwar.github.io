@@ -1,11 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { styled } from 'styled-components';
-import { lightTheme, screenSize } from '../../themes/themes';
+import { lightTheme } from '../../themes/themes';
 import { PROJECTS } from '../../data/projects';
 import ProjectCard from '../projectCard';
 import TitleBar from '../titleBar';
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 const Wrapper = styled.div`
     width: calc(100% - 1rem);

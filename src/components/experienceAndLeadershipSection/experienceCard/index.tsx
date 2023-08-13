@@ -78,15 +78,12 @@ const Description = styled.p`
 `
 
 const Icon = styled.span`
-    position: relative;
-    left: -2rem;
-    bottom: -1.1rem;
     width: 2rem;
     height: 2rem;
     border-radius: 4rem;
     border: none;
-    min-width: 2rem;
     background-color: ${ lightTheme.primaryColor };
+    margin-top: auto;
 `
 
 const SkillsBox = styled.div`
@@ -121,14 +118,13 @@ const LabelBox = styled.div`
     padding-top: 1rem;
 `
 
-const IconWrapper = styled.div`
+const VeticalLine = styled.div`
   display: flex;
   justify-content: center;
-  align-items: flex-start;
   height: 100%;
-  margin-top: 0.2rem;
 
   position: relative; /* Set to relative for positioning pseudo-element */
+  z-index: 0;
   &::before {
     content: '';
     position: absolute;
@@ -137,8 +133,15 @@ const IconWrapper = styled.div`
     left: 0.9rem; /* Adjust the left position to center the line */
     width: 0.2rem;
     background-color: ${lightTheme.tertiaryColor}; /* Set the color of the line */
+    z-index: -1;
   }
 `;
+
+const IconWrapper = styled.div`
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+`
 
 const ExperienceCard: React.FC<ExperienceCardProps> = ({
     position,
@@ -157,9 +160,12 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
                 <Heading style={{ textAlign: 'right' }}>{position}</Heading>
                 <SubHeading style={{ textAlign: 'right' }}>{dates}</SubHeading>
             </LabelBox>
-            <IconWrapper/>
+            <VeticalLine>
+                <IconWrapper data-aos="fade-up">
+                    <Icon/>
+                </IconWrapper>
+            </VeticalLine>
             <ContentWrapper data-aos="fade-up">
-                <Icon />
                 <DescriptionBox>
                     <Heading>{company}</Heading>
                     <SubHeading>{location}</SubHeading>

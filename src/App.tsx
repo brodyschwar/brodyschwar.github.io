@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import './App.css';
 import TitleSection from './components/titleSection';
 import { MAIN_TITLE } from './data/titleSections';
@@ -7,6 +7,8 @@ import ExperienceAndLeadershipSection from './components/experienceAndLeadership
 import ProjectSection from './components/projectsSection';
 
 function App() {
+  let ref = useRef(null);
+
   return (
     <>
     <div className="App">
