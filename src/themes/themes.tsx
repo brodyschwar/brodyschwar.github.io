@@ -14,6 +14,7 @@ export const darkTheme = {
 };
 
 export const screenSize = {
-    small: "512px",
+    xsmall: "412px",
+    small: "580px",
     medium: "728px"
 }

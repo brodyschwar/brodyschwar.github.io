@@ -1,6 +1,6 @@
 import React from 'react';
 import { styled } from 'styled-components';
-import { lightTheme } from '../../themes/themes';
+import { lightTheme, screenSize } from '../../themes/themes';
 import StatsListing, { StatsListingProps } from './statsListing';
 import HorizontalLine from '../horizontalLine';
 import TitleBar from '../titleBar';
@@ -50,6 +50,10 @@ const Description = styled.div`
     max-width: 35rem;
     text-align: center;
     color: ${ lightTheme.textColor };
+
+    @media (max-width: ${ screenSize.small }) {
+        font-size: 16px;
+    }
 `
 
 const STATS: StatsListingProps[] = [

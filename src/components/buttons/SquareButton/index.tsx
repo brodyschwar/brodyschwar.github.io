@@ -58,9 +58,8 @@ const buttonStyle: ButtonStyles = {
 
 
 const StyledButton = styled.button<StyledButtonProps>`
-    padding: 0.1rem 1rem;
+    padding: 0.3rem 1rem;
     margin: 0.2rem;
-    height: 2.5rem;
     min-width: 12rem;
     background-color: ${ (props) => buttonStyle[props.type]['backgroundColor'] };
     color: ${ (props) => buttonStyle[props.type]['textColor'] };

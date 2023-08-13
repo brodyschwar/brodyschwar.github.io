@@ -7,6 +7,10 @@ const HeaderBar = styled.div`
     flex-direction: row;
     width: 80%;
     align-items: center;
+
+    @media (max-width: ${ screenSize.small }) {
+        width: 100%;
+    }
 `
 const HeaderLine = styled.span`
     width: 50%;
@@ -31,6 +35,11 @@ const Header = styled.h2`
     @media (max-width: ${ screenSize.small }) {
         font-size: 24px;
         padding: 0 0.5rem;
+    }
+
+    @media (max-width: ${ screenSize.xsmall }) {
+        font-size: 20px;
+        padding: 0;
     }
 `
 

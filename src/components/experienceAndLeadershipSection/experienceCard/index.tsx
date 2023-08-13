@@ -52,6 +52,10 @@ const Heading = styled.h5`
     @media (max-width: ${ screenSize.medium }) {
         font-size: 24px;
     }
+
+    @media (max-width: ${ screenSize.xsmall }) {
+        font-size: 14px;
+    }
 `
 
 const SubHeading = styled.p`
@@ -64,6 +68,10 @@ const SubHeading = styled.p`
     @media (max-width: ${ screenSize.medium }) {
         font-size: 18px;
     }
+
+    @media (max-width: ${ screenSize.xsmall }) {
+        font-size: 14px;
+    }
 `
 
 const Description = styled.p`
@@ -74,6 +82,10 @@ const Description = styled.p`
 
     @media (max-width: ${ screenSize.medium }) {
         font-size: 16px;
+    }
+
+    @media (max-width: ${ screenSize.xsmall }) {
+        font-size: 12px;
     }
 `
 
@@ -110,6 +122,10 @@ const Skill = styled.p`
     font-size: 18px;
     margin: 0.2rem 0.5rem;
     text-align: right;
+
+    @media (max-width: ${ screenSize.xsmall }) {
+        font-size: 14px;
+    }
 `
 const LabelBox = styled.div`
     display: flex;

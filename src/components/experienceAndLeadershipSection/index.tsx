@@ -8,6 +8,7 @@ const Wrapper = styled.div`
   background-color: ${lightTheme.backgroundColor};
   padding-top: 1rem;
   padding-bottom: 1rem;
+  width: 100%;
 `;
 
 const DescriptionWrapper = styled.div`
@@ -52,24 +53,37 @@ const Header = styled.h2`
     color: ${ lightTheme.textColor };
     font-size: 36px;
     font-weight: 800;
+    max-width: 100%;
 
     @media (max-width: ${ screenSize.medium }) {
         font-size: 30px;
     }
 
     @media (max-width: ${ screenSize.small }) {
-        font-size: 24px;
+        font-size: 20px;
     }
 `
 
+const ContentWrapper = styled.div`
+    width: 100%;
+`
+
 const Description = styled.div`
-    width: 50%;
+    width: calc(100% - 1rem);
     margin-bottom: 1rem;
     font-family: ${ lightTheme.primaryFont };
     font-weight: 400;
     font-size: 20px;
-    max-width: 40rem;
+    max-width: 60rem;
     color: ${ lightTheme.textColor };
+
+    @media (max-width: ${ screenSize.medium }) {
+        font-size: 18px;
+    }
+
+    @media (max-width: ${ screenSize.small }) {
+        font-size: 16px;
+    }
 `
 
 const description: string = "I have always pursued experience and leadership within all my endeavors. I am constantly looking to grow and develop, in order to maximize what I can do. Check out how I got the skills I have today."
@@ -82,14 +96,14 @@ const ExperienceAndLeadershipSection = () => {
                 <IconWrapper>
                     <Icon/>
                 </IconWrapper>
-                <div>
+                <ContentWrapper>
                 <Header>
                     Experience and Leadership
                 </Header>
                 <Description>
                     {description}
                 </Description>
-                </div>
+                </ContentWrapper>
             </DescriptionWrapper>
             {EXPERIENCE.map((experience, indx) => (
                 <ExperienceCard key={indx} {...experience}/>

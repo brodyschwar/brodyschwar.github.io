@@ -15,9 +15,10 @@ const Backdrop = styled.div`
     margin: 0;
     height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: ${ lightTheme.primaryColor };
+    justify-content: flex-end;
+    align-items: flex-end;
+    background-size: cover;
+    background-position: 50% 20%;
 `
 
 const Wrapper = styled.div`
@@ -49,10 +50,10 @@ const DecorativeSpacer = styled.span`
 const Title = styled.h1`
     margin: 0;
     font-family: ${ lightTheme.primaryFont };
-    font-size: 96px;
+    font-size: 70px;
     font-weight: 800;
     text-align: right;
-    line-height: 5rem;
+    line-height: 4rem;
 
     @media (max-width: ${ screenSize.medium }) {
         font-size: 56px;
@@ -65,47 +66,41 @@ const Title = styled.h1`
     }
 `
 
-const ImageCard = styled.div`
-    height: 80vh;
-    min-width: 20rem;
-    border: 0.2rem solid ${ lightTheme.tertiaryColor };
-    background-size: cover;
-    background-position: center;
-    margin-right: 1rem;
-`
-
 const InfoSection = styled.div`
-    width: 50%;
+    max-width: 40%;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     justify-content: flex-end;
-    padding-top: 2rem;
-    margin-right: 1rem;
+    margin: 1rem;
+    padding: 1rem;
+    background-color: ${ lightTheme.primaryColor };
 
-    @media (max-width: ${ screenSize.medium }) {
+    @media (max-width: ${ screenSize.small }) {
         flex-direction: column-reverse;
         width: 100%;
+        max-width: 100%;
+    }
+    
+    @media (max-width: ${ screenSize.xsmall }) {
+        margin: 0.5rem;
     }
 `
 
 const TitleSection: React.FC<TitleSectionProps> = ({title, buttons, img}) => {
     return (
-        <Backdrop>
-            <Wrapper>
-                <ImageCard style={{backgroundImage: `url("${img.img}")`}}/>
-                <InfoSection>
-                    <ButtonWrapper>
-                        {buttons.map((button, index) => (
-                            <RoundButton key={index} onClick={button.clickHandler}>{button.label}</RoundButton>
-                        ))}
-                    </ButtonWrapper>
-                    <DecorativeSpacer/>
-                    <Title>
-                        {title}
-                    </Title>
-                </InfoSection>
-            </Wrapper>
+        <Backdrop style={{backgroundImage: `url("${img.img}")`}}>
+            <InfoSection>
+                <ButtonWrapper>
+                    {buttons.map((button, index) => (
+                        <RoundButton key={index} onClick={button.clickHandler}>{button.label}</RoundButton>
+                    ))}
+                </ButtonWrapper>
+                <DecorativeSpacer/>
+                <Title>
+                    {title}
+                </Title>
+            </InfoSection>
         </Backdrop>
     );
 }
