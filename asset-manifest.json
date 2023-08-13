@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/static/css/main.81c721de.css",
+    "main.js": "/static/js/main.9aeabde8.js",
+    "static/js/787.4ce1a41e.chunk.js": "/static/js/787.4ce1a41e.chunk.js",
+    "static/media/skiing_headshot.jpeg": "/static/media/skiing_headshot.29dc0d04c683924fe550.jpeg",
+    "static/media/GuardinPlants.png": "/static/media/GuardinPlants.f93c57e2a516a207fc53.png",
+    "static/media/carpool_sketch.jpg": "/static/media/carpool_sketch.bc2053b35dc5086df930.jpg",
+    "static/media/ReactCode.png": "/static/media/ReactCode.6761d1ee545f45fb64d4.png",
+    "index.html": "/index.html",
+    "main.81c721de.css.map": "/static/css/main.81c721de.css.map",
+    "main.9aeabde8.js.map": "/static/js/main.9aeabde8.js.map",
+    "787.4ce1a41e.chunk.js.map": "/static/js/787.4ce1a41e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.81c721de.css",
+    "static/js/main.9aeabde8.js"
+  ]
+}
