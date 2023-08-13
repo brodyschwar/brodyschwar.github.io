@@ -20,7 +20,7 @@ function App() {
 
   const [linkeInButton, resumeButton, resturauntButton] = MAIN_TITLE.buttons
 
-  const navButtons = [ linkeInButton, resumeButton, { label: "Projects", clickHandler: handleExperienceClick }, { label: "Experience", clickHandler: handleExperienceClick }, resturauntButton]
+  const navButtons = [ linkeInButton, resumeButton, { label: "Projects", clickHandler: handleProjectsClick }, { label: "Experience", clickHandler: handleExperienceClick }, resturauntButton]
 
   return (
     <>
