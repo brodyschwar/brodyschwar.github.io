@@ -7,14 +7,29 @@ import ExperienceAndLeadershipSection from './components/experienceAndLeadership
 import ProjectSection from './components/projectsSection';
 
 function App() {
-  let ref = useRef(null);
+  const projectRef = useRef<HTMLDivElement>(null);
+  const experienceRef = useRef<HTMLDivElement>(null);
+
+  const handleProjectsClick = () => {
+    projectRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleExperienceClick = () => {
+    experienceRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const [linkeInButton, resumeButton, resturauntButton] = MAIN_TITLE.buttons
+
+  const navButtons = [ linkeInButton, resumeButton, { label: "Projects", clickHandler: handleExperienceClick }, { label: "Experience", clickHandler: handleExperienceClick }, resturauntButton]
 
   return (
     <>
     <div className="App">
-      <TitleSection {...MAIN_TITLE}/>
+      <TitleSection {...MAIN_TITLE} buttons={navButtons}/>
       <AboutMe/>
+      <div ref={projectRef}/>
       <ProjectSection/>
+      <div ref={experienceRef}/>
       <ExperienceAndLeadershipSection/>
     </div>
     </>
