@@ -1,6 +1,7 @@
 import { ProjectCardProps } from "../components/projectCard";
 import car_sketch from "../assets/carpool_sketch.jpg"
 import react_code from "../assets/ReactCode.png"
+import guardin_plans from "../assets/GuardinPlants.png"
 
 const CAR_POOL_PROJECT: ProjectCardProps = {
     projectTitle: "Carpool Creating Automation",
@@ -15,6 +16,21 @@ const CAR_POOL_PROJECT: ProjectCardProps = {
         alt: "simple map of city with markers and a choral colored lined route connecting them sketch art."
     }
 }
+
+const GUARDIN_PLANTS: ProjectCardProps = {
+    projectTitle: "Guardin' Plants",
+    skills: ["C#", "Unity", "Team Development"],
+    description: "Collaborated with a team of five students to produce a game for the Unity game Engine. Developed a custom pathfinding algorithm which streamlined the development pipeline. Won 5th place at the 2023 University of Michigan - Eastern Michigan University game jam.",
+    buttonProps: {
+        label: "Download the Game",
+        clickHandler: () => window.open("https://drive.google.com/file/d/1oeC6x0Ot2tv5a9KS08zu7nBWymXyIYKy/view?usp=sharing", "_blank")
+    },
+    img: {
+        img: guardin_plans,
+        alt: `the title screen to the game "Guardin' Plants", shows mother oak over the games playable forest`
+    }
+}
+
 
 const THIS_WEBSITE: ProjectCardProps = {
     projectTitle: "This Website!",
@@ -32,5 +48,6 @@ const THIS_WEBSITE: ProjectCardProps = {
 
 export const PROJECTS: ProjectCardProps[] = [
     CAR_POOL_PROJECT,
+    GUARDIN_PLANTS,
     THIS_WEBSITE
 ]
