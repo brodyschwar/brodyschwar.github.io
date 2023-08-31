@@ -2,6 +2,8 @@ import { ProjectCardProps } from "../components/projectCard";
 import car_sketch from "../assets/carpool_sketch.jpg"
 import react_code from "../assets/ReactCode.png"
 import guardin_plans from "../assets/GuardinPlants.png"
+import vanderpol from "../assets/VanDerPolPrediction2.png"
+import covid_data from "../assets/CovidPredictionData.png"
 
 const CAR_POOL_PROJECT: ProjectCardProps = {
     projectTitle: "Carpool Creating Automation",
@@ -14,6 +16,30 @@ const CAR_POOL_PROJECT: ProjectCardProps = {
     img: {
         img: car_sketch,
         alt: "simple map of city with markers and a choral colored lined route connecting them sketch art."
+    }
+}
+
+const COVID_PREDICTION: ProjectCardProps = {
+    projectTitle: "Using Machine Learning for Predicting Covid-19 Rates",
+    skills: ["Machine Learning", "Python", "Applied Mathematics"],
+    description: "Implemented several machine learning algorithms to predict Covid-19 cases and deaths. Prepaired data from the World Health Organization for machine learning training. Built several LSTM Models and Convolutional Nueral Networks. Developed a working model for predicting parameters for disease tracking",
+    img: {
+        img: covid_data,
+        alt: "A graph showing the results of the Covid-19 project. It desplays the actual data vs predicted data from an LSTM model."
+    }
+}
+
+const VANDERPPOL_PREDICTION: ProjectCardProps = {
+    projectTitle: "Using Neural Networks for Ordinary Differential Equation Parameter Predictions",
+    skills: ["Machine Learning", "Python"],
+    description: `Designed a lightweight neural network to predict the µ parameter of a Van Der Pol equation. Completed a proof of concept for a method of discovering underlying ordinary differential equation parameters from inherently noisy data. Adapted this experiement to create a covid prediction model based on real world data. See "Using Machine Learning for Predicting Covid-19 Rates"`,
+    buttonProps: {
+        label: "Check out Project",
+        clickHandler: () => window.open("https://colab.research.google.com/drive/1l3AZleo9rVBEchebmU6b0MDjowai7Tpr?usp=share_link", "_blank")
+    },
+    img: {
+        img: vanderpol,
+        alt: "A graph showing the results of the Covid-19 project. It displays the actual data vs predicted data from an LSTM model."
     }
 }
 
@@ -47,6 +73,8 @@ const THIS_WEBSITE: ProjectCardProps = {
 }
 
 export const PROJECTS: ProjectCardProps[] = [
+    COVID_PREDICTION,
+    VANDERPPOL_PREDICTION,
     CAR_POOL_PROJECT,
     GUARDIN_PLANTS,
     THIS_WEBSITE
