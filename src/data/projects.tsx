@@ -4,6 +4,7 @@ import react_code from "../assets/ReactCode.png"
 import guardin_plans from "../assets/GuardinPlants.png"
 import vanderpol from "../assets/VanDerPolPrediction2.png"
 import covid_data from "../assets/CovidPredictionData.png"
+import nim_board from "../assets/NimGame.svg"
 
 const CAR_POOL_PROJECT: ProjectCardProps = {
     projectTitle: "Carpool Creating Automation",
@@ -57,6 +58,19 @@ const GUARDIN_PLANTS: ProjectCardProps = {
     }
 }
 
+const NIM_BOT: ProjectCardProps = {
+    projectTitle: "Solving the Game of Nim",
+    skills: ["Python", "Dynamic Programming"],
+    description: "The game of Nim is a famous game where two players take turns removing nimming objects from rows. The last player to remove an object loses. After playing with friends at a bar, I decided to code the game and a bot who will always win. Please take a look, or challenge my creation!",
+    buttonProps: {
+        label: "Play the Bot",
+        clickHandler: () => window.open("https://colab.research.google.com/drive/1_qS_Xc6WcigzqFEhMQhldSHmgAXIe6_6?usp=sharing", "_blank")
+    },
+    img: {
+        img: nim_board,
+        alt: `a game of nim set up with matches. Rows of 1, 3, 5, 7`
+    }
+}
 
 const THIS_WEBSITE: ProjectCardProps = {
     projectTitle: "This Website!",
@@ -74,8 +88,9 @@ const THIS_WEBSITE: ProjectCardProps = {
 
 export const PROJECTS: ProjectCardProps[] = [
     COVID_PREDICTION,
+    GUARDIN_PLANTS,
+    NIM_BOT,
     VANDERPPOL_PREDICTION,
     CAR_POOL_PROJECT,
-    GUARDIN_PLANTS,
     THIS_WEBSITE
 ]
