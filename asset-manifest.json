@@ -1,21 +1,22 @@
 {
   "files": {
     "main.css": "/static/css/main.81c721de.css",
-    "main.js": "/static/js/main.1c0c7d32.js",
+    "main.js": "/static/js/main.0246a116.js",
     "static/js/787.4ce1a41e.chunk.js": "/static/js/787.4ce1a41e.chunk.js",
     "static/media/skiing_headshot.jpeg": "/static/media/skiing_headshot.29dc0d04c683924fe550.jpeg",
     "static/media/GuardinPlants.png": "/static/media/GuardinPlants.f93c57e2a516a207fc53.png",
     "static/media/VanDerPolPrediction2.png": "/static/media/VanDerPolPrediction2.3a5f8620af29cd64c44c.png",
     "static/media/carpool_sketch.jpg": "/static/media/carpool_sketch.bc2053b35dc5086df930.jpg",
+    "static/media/nim-game-thumbnail.png": "/static/media/nim-game-thumbnail.1a40c507bd8dc542fd71.png",
     "static/media/ReactCode.png": "/static/media/ReactCode.6761d1ee545f45fb64d4.png",
     "static/media/CovidPredictionData.png": "/static/media/CovidPredictionData.3d2e05e069783b798e2d.png",
     "index.html": "/index.html",
     "main.81c721de.css.map": "/static/css/main.81c721de.css.map",
-    "main.1c0c7d32.js.map": "/static/js/main.1c0c7d32.js.map",
+    "main.0246a116.js.map": "/static/js/main.0246a116.js.map",
     "787.4ce1a41e.chunk.js.map": "/static/js/787.4ce1a41e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.81c721de.css",
-    "static/js/main.1c0c7d32.js"
+    "static/js/main.0246a116.js"
   ]
 }
