@@ -4,7 +4,7 @@ import react_code from "../assets/ReactCode.png"
 import guardin_plans from "../assets/GuardinPlants.png"
 import vanderpol from "../assets/VanDerPolPrediction2.png"
 import covid_data from "../assets/CovidPredictionData.png"
-import nim_board from "../assets/NimGame.svg"
+import nim_board from "../assets/nim-game-thumbnail.png"
 
 const CAR_POOL_PROJECT: ProjectCardProps = {
     projectTitle: "Carpool Creating Automation",
