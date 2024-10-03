@@ -18,9 +18,9 @@ function App() {
     experienceRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const [linkeInButton, resumeButton, resturauntButton] = MAIN_TITLE.buttons
+  const [linkeInButton, resumeButton] = MAIN_TITLE.buttons
 
-  const navButtons = [ linkeInButton, resumeButton, { label: "Projects", clickHandler: handleProjectsClick }, { label: "Experience", clickHandler: handleExperienceClick }, resturauntButton]
+  const navButtons = [ { label: "Projects", clickHandler: handleProjectsClick }, { label: "Experience", clickHandler: handleExperienceClick }, linkeInButton, resumeButton]
 
   return (
     <div className="App">

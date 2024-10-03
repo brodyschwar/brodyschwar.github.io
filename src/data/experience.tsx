@@ -5,7 +5,7 @@ const BOUNTEOUS: ExperienceCardProps = {
     dates: "Jun - Aug 2022",
     company: "Bounteous",
     location: "Chicago",
-    description: "Learned front-end programing using React and Redux within an apprenticeship program. Worked in a SCUM environment to build features for a medical insurance website",
+    description: "Learned front-end programing using React and Redux within an apprenticeship program. Worked in a SCRUM environment to build features for a medical insurance website.",
     skills: ["React", "Redux", "CSS"]
 }
   

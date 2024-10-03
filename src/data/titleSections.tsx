@@ -5,8 +5,7 @@ export const MAIN_TITLE: TitleSectionProps = {
     title: "Brody Schwartz",
     buttons: [
         { label: "LinkedIn", clickHandler: () => window.open("https://www.linkedin.com/in/brody-schwartz/", "_blank") },
-        { label: "Resume", clickHandler: () => window.open("https://drive.google.com/file/d/1KtbngXSg35mAkjiu47isGELI3dZXIett/view?usp=share_link", "_blank") },
-        { label: "Favorite Resturaunt", clickHandler: () => window.open("https://www.instagram.com/piazzabellatrattoria/?hl=en", "_blank") },
+        { label: "Resume", clickHandler: () => window.open("https://drive.google.com/file/d/1YDIcWRXYshrUgK1JQx0OzpHaS96BggqV/view?usp=share_link", "_blank") }
     ],
     img: {
         img: skiing,
